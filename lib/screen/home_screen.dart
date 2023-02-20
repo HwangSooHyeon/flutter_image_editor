@@ -113,6 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     setState(() {
       this.image = image;
+      stickers = {};
     });
   }
 
