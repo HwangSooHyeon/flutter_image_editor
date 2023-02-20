@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:image_editor/component/footer.dart';
 import 'package:image_editor/component/main_app_bar.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -31,6 +32,13 @@ class _HomeScreenState extends State<HomeScreen> {
               onDeleteItem: onDeleteItem,
             ),
           ),
+          if (image != null)
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: Footer(onEmoticonTap: onEmoticonTap),
+            ),
         ],
       ),
     );
@@ -56,6 +64,8 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+
+  void onEmoticonTap(int index) {}
 
   void onPickImage() async {
     final image = await ImagePicker().pickImage(source: ImageSource.gallery);
