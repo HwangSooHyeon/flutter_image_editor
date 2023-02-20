@@ -5,6 +5,7 @@ import 'package:image_editor/component/emoticon_sticker.dart';
 import 'package:image_editor/component/footer.dart';
 import 'package:image_editor/component/main_app_bar.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:uuid/uuid.dart';
 
 import '../model/sticker_model.dart';
 
@@ -85,7 +86,17 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void onEmoticonTap(int index) {}
+  void onEmoticonTap(int index) async {
+    setState(() {
+      stickers = {
+        ...stickers,
+        StickerModel(
+          id: Uuid().v4(),
+          imgPath: 'asset/img/emoticon_$index.png',
+        ),
+      };
+    });
+  }
 
   void onPickImage() async {
     final image = await ImagePicker().pickImage(source: ImageSource.gallery);
