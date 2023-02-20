@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:image_editor/component/main_app_bar.dart';
 import 'package:image_picker/image_picker.dart';
@@ -9,7 +11,6 @@ class HomeScreen extends StatefulWidget {
   State<StatefulWidget> createState() => _HomeScreenState();
 }
 
-
 class _HomeScreenState extends State<HomeScreen> {
   XFile? image;
 
@@ -19,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Stack(
         fit: StackFit.expand,
         children: [
+          renderBody(),
           Positioned(
             top: 0,
             left: 0,
@@ -30,6 +32,27 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget renderBody() {
+    if (image != null) {
+      return Positioned.fill(
+        child: InteractiveViewer(
+          child: Image.file(
+            File(image!.path),
+            fit: BoxFit.cover,
+          ),
+        ),
+      );
+    }
+
+    return Center(
+      child: TextButton(
+        style: TextButton.styleFrom(foregroundColor: Colors.grey),
+        onPressed: onPickImage,
+        child: Text('이미지 선택하기'),
       ),
     );
   }
