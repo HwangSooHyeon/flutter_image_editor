@@ -1,16 +1,33 @@
-# image_editor
+# flutter_image_editor
 
-A new Flutter project.
+---
 
-## Getting Started
+포토 스티커 어플리케이션
 
-This project is a starting point for a Flutter application.
+## 💻 프로젝트 소개
 
-A few resources to get you started if this is your first Flutter project:
+--- 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+ImagePicker 위젯으로 이미지를 선택하고 Gesture Detector로 선택한 스티커의 크기 및 위치를 조정하며 수정된 이미지를 갤러리에 저장할 수 있는 프로젝트
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🕰️ 개발 환경
+
+---
+
+Language: Dart
+
+Framework: Flutter 3
+
+IDE: Android Studio
+
+## ⚙️ 주요 기능
+
+---
+
+### 어플리케이션 부분
+
+- HomeScreen
+    - 갤러리에서 이미지 선택
+    - 스티커를 탭해서 추가 및 크기 위치 조정
+    - 스티커 삭제 버튼으로 추가된 스티커 삭제
+    - 저장 버튼으로 수정된 이미지 갤러리에 저장
